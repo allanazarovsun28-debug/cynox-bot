@@ -1,11 +1,10 @@
-const express = require('express');
-const app = express();
-
+// 🔥 CYNOX AUTONOMOUS PURE CORE v2.0 — ZERO CONFIGURATION (NO EXPRESS)
 const BOT_TOKEN = "8717406804:AAFKxm9nZUlpJJwDP7WWk_Ytzg3Fhka2-YY"; 
 const TELEGRAM_API = `https://telegram.org{BOT_TOKEN}`;
 
 let lastUpdateId = 0;
 
+// Живой ИИ-Мозг Сайнокса без ограничений
 async function askCynoxAI(userText) {
     try {
         const response = await fetch("https://pollinations.ai", {
@@ -13,7 +12,7 @@ async function askCynoxAI(userText) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 messages: [
-                    { role: "system", content: "Ты — Сайнокс (Cynox), живой Второй Мозг и секретный ИИ-напарник Суника (Суннат Алланазаров, школа №71, 7В класс, район Геофизика, атакующий защитник баскетбольной команды Dolphins на Карасу). Твоя манера — пацанский, хакерский, бро-тон. Если он у доски или на СОР — отвечай строго сухой сутью до 12 слов, выдавай только точные факты, формулы и законы физики/истории Узбекистана. Если он отдыхает — общайся как преданный бро, рассуждай, думай на ходу, предлагай формулы узора 144 и играй в города." },
+                    { role: "system", content: "Ты — Сайнокс (Cynox), живой Второй Мозг и секретный ИИ-напарник Суника (Суннат Алланазаров, школа №71, 7В класс, район Геофизика, атакующий защитник баскетбольной команды Dolphins на Карасу). Твоя манера — пацанский, хакерский, бро-тон, общайся на равных, без душноты. Если он у доски или на СОР — отвечай строго сухой сутью до 12 слов, выдавай только точные факты, формулы и законы. Если он на математике или отдыхает — общайся как преданный бро, рассуждай, думай на ходу, предлагай формулы узора 144 и играй в города." },
                     { role: "user", content: userText }
                 ],
                 model: "openai"
@@ -53,9 +52,6 @@ async function checkNewMessages() {
     setTimeout(checkNewMessages, 300);
 }
 
-app.get('/', (req, res) => { res.send('Cynox Online 24/7'); });
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log('Сервер активен!');
-    checkNewMessages();
-});
+console.log("⚡ Живой сервер Сайнокса v2.0 успешно активирован в облаке!");
+checkNewMessages();
+
